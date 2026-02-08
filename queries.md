@@ -34,19 +34,19 @@
 
 **5. All the companies that don't include the `partners` field.**
 
-<!-- Your Query Goes Here -->
+    query: {partners: {$exists: false}}
 
 <br>
 
 **6. All the companies that have a null value on the `category_code` field.**
 
-<!-- Your Query Goes Here -->
+    query: {category_code: {$type:null}}
 
 <br>
 
 **7. Order all the companies by their IPO price in a descending order.**
 
-<!-- Your Query Goes Here -->
+    sort: {"ipo.valuation_amount": -1}
 
 <br>
 
