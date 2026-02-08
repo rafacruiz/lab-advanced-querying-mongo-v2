@@ -52,19 +52,23 @@
 
 **8. Retrieve the 10 companies with most employees, order by the `number of employees`.**
 
-<!-- Your Query Goes Here -->
+    sort: {number_of_employees: -1}
+    limit: 10
 
 <br>
 
 **9. All the companies founded on the second semester of the year (July to December). Limit your search to 1000 companies.**
 
-<!-- Your Query Goes Here -->
+    query: { $and: [{ founded_month: { $lte: 12 } }, { founded_month: { $gte: 7 } }]}
+    limit: 1000
 
 <br>
 
 **10. All the companies that have been founded on the first seven days of the month, including the seventh. Sort them by their `acquisition price` in a descending order. Limit the search to 10 documents.**
 
-<!-- Your Query Goes Here -->
+    query: {founded_day: {$lte: 7}}
+    sort: {"acquisition.price_amount": -1}
+    limit: 10
 
 <br>
 
